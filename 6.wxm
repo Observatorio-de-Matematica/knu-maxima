@@ -1,0 +1,40 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: input   start ] */
+limit(n - sqrt(n**2 + n), n, inf);
+limit((exp(x)- x - 1)/(1 - cos(x)), x, 0);
+limit((x - x**(1/3))/(1-x**(1/3)), x, 1);
+limit((1 + cos(%pi * x))/(1 - cos(2 * %pi * x)), x, 1);
+limit((1 - sin(2*x))**(-x**-2), x, 0);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+diff((x**2*(1+x))**(1/3), x);
+diff(exp(x**2+sin(x)), x);
+diff(log(x/(2*x-1))**3);
+diff(sin(2*x**2+1)**2);
+diff(acos((x**2-3)/(x+2)), x);
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+x0: 0;
+y: exp(x**2 - x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+subst(0, x, (diff(y, x)));
+subst(0, x, diff(y, x, 2));
+subst(0, x, diff(y, x, 3));
+subst(0, x, diff(y, x, 4));
+subst(0, x, diff(y, x, 5));
+subst(0, x, diff(y, x, 6));
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$
