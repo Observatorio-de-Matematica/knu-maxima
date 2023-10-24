@@ -1,0 +1,114 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: input   start ] */
+L: makelist(random(40)-12, 8);
+S: setify(L);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+setp(L);
+setp(S);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+in_set(x):=elementp(x, S);
+map(in_set, [-5,0,5,19]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+S1: rest(S, -2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+S2: adjoin(random(40)-12, S);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+map(cardinality, [S, S1, S2]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+S3: setify(makelist(random(25)-9, 6));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+disjointp(S2, S3);
+intersection(S2, S3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+setdifference(S, S3);
+setdifference(S3, S);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/**Операція різниці множин не комутативна**/;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+S4: union(S, S3);
+cartesian_product(S, S3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+powerset(S1);
+powerset(S1, 2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_negative(x):= x < 0;
+every(is_negative, S);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_less_then_neg3(x):= is(x < -3);
+S_: partition_set(S4,is_less_then_neg3);
+S6: S_[1];
+S5: S_[2];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_bigger_than26(x):=is(x > 26);
+some(is_bigger_than26, S6);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L1: makelist(random(14), 27);
+S7: setify(L1);
+length(L1) - length(S7);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+app: setify(charlist("application"));
+pencil: setify(charlist("pencil"));
+is_in_pencil(x):=not elementp(x, pencil);
+partition_set(app, is_in_pencil);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+less_than12(x):=is(x<12);
+every(less_than12, S7);
+S7;
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$
