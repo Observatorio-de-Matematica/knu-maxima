@@ -1,0 +1,54 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: input   start ] */
+limit((3*x - x**2) / (sqrt(x + 6) - 3), x, 0);
+limit((1 + sin(4*x))**(1/tan(3*x)), x, 0);
+limit(3*x - sqrt(9*x*(x - 4)), x, inf);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+diff(5**((2 - x)/(2 + x)), x);
+diff((1+sin(4*x))/(1-sin(4*x)), x);
+f: xy + log(y) - 7*log(x) = 0;
+depends(y,x);
+diff(f, x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f1(x):=exp(x**2 - 7*x);
+x0: 0;
+dv(t):=subst(0, x, diff(f1(x), x, t));
+map(dv, [1,2,3,4,5]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=(x**5 - 5**x+3)/(5+x**3);
+f1: diff(f(x), x, 1);
+/*wxplot2d(f1, ['x, -2, 6], ['y, -5, 5]);*/
+x1: find_root(f1, x, -1, 0);
+x2: find_root(f1, x, 0, 2);
+x3: find_root(f1, x, 3,5);
+extr: [[x1, f(x1)], [x2, f(x2)], [x3, f(x3)]];
+wxplot2d([[discrete, extr], f], [x, -1, 5], [style, points, lines], [color, red, blue]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+x: sin(t);
+y:t+cos(2*t);
+wxplot2d([parametric, x, y, [t, 0, 5], [nticks, 200]]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+rho: cos(phi) + sin(2 * phi);
+wxdraw2d(nticks = 200, polar(rho, phi, 0, 2*%pi));
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$
