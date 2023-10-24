@@ -1,0 +1,138 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: input   start ] */
+f:(x^2 - 2^x)/(2+cos(x));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f1:diff(f,x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f2: diff(f, x, 2);¦
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([f, f1, f2], ['x, -2, 5], ['y, -2, 2]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*==========================================*/;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+x1: find_root(f,x,-2,1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+ev(f, x=x1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+x2: find_root(f,x,0,3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+ev(f, x=x2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+x3: find_root(f,x,4,6);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+ev(f, x=x3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*==========================================*/;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+xx1: find_root(f1, x, -2,1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+ev(f1, x=xx1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+y1: ev(f, x=xx1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+xx2: find_root(f1, x, 2, 4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+ev(f1, x=xx2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+y2: ev(f, x=xx2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*==========================================*/
+;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+xxx1: find_root(f2, x, -3, 0);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+ev(f2, x=xxx1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+yy:ev(f, x=xxx1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+xxx2: find_root(f2, x, 0, 3);
+ev(f2, x=xxx2);
+yy2: ev(f, x=xxx2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*==========================================*/;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+extr: [[xx1, y1], [xx2,y2], [xxx1, yy]];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([[discrete, extr], f], [x, -3, 5], [style, points, lines], [color, red, blue], [point_type, asterisk]);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$
