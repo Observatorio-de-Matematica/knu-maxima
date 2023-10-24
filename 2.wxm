@@ -1,0 +1,106 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: input   start ] */
+L: makelist(random(40) - 12, 8);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/** Seems not to work, but concept is close
+:lisp (map nil #'(lambda (x) (mfuncall '$member x $L)) '(-5 0 5 19)); **/;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+is_member(x):= member(x, L);
+map(is_member, [-5,0,5,19]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L1: sort(L);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L2: rest(L, -3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L3: cons(random(10), L1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+length(L3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L4: makelist(random(6), 8);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L5: unique(L4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L6: endcons(random(10), L5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L7: reverse(sort(L6));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L8: join(L2, L7);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):= x #4;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L9: sublist(L8, f);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L10: random_permutation(L9);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L11: append(L, sort(L8), reverse(sort(L10)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+test(x):=x < 5;
+L12: sublist_indices(L11, test);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=5*x**3 - x **2;
+L13: map(f, L11);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L13[4];
+reverse(sort(L8))[1];
+sort(L2)[1];
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$
