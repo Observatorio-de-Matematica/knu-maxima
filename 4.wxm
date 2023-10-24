@@ -1,0 +1,125 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: input   start ] */
+rand[i,j]:=random(10);
+A: genmatrix(rand, 3, 4);
+B: genmatrix(rand, 2,2);
+C: genmatrix(rand, 3, 4);
+D: genmatrix(rand, 3,3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A + C;
+A - C;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+AT: transpose(A);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+C.AT;
+AT.C;
+AT.D;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+determinant(B);
+determinant(D);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+C3: submatrix(C, 3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+C3.A;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A323: submatrix(3, A, 2, 3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+invert(A323);
+invert_by_adjoint(A323);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+B2: addrow(
+    B,
+    makelist(random(10), length(B[1])),
+    makelist(random(10), length(B[1]))
+);
+B25: addcol(
+    B2,
+    makelist(random(10), length(B2)),
+    makelist(random(10), length(B2)),
+    makelist(random(10), length(B2)),
+    makelist(random(10), length(B2)),
+    makelist(random(10), length(B2))
+);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+(3).B25;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+D33: submatrix(3, D, 3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+matrixmap(log, C3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+mega_function(x):= x +1;
+matrixmap(mega_function, AT);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+genmatrix(rand, 4,2).genmatrix(rand, 2,4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+matrix([5, -1, 2], [1,0,1]).(
+    transpose(matrix([1,2,1],[2,-1,3],[0,1,2]))
+).matrix([3,-1],[2,0],[0,4]) - (4).matrix([1,-2],[2,0]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+determinant(matrix(
+    [1, 7, 2, 8],
+    [5, -2, 6, 1],
+    [4, 1, 3, 0],
+    [-2, -3, 1, 4]));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A_: matrix([-1, -5, 5], [5,3,5], [1,1,4]);
+A_T: invert(A_);
+A_.A_T;
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$
